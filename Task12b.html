@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 12b | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+  <h1>Task 12b</h1>
+  <p class="subtitle">Prism transmission and deflection graphs</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Recreate the prism graphs: θ<sub>t</sub> vs θ<sub>i</sub>, δ vs θ<sub>i</sub> for a fixed apex angle, and a family of δ(θ<sub>i</sub>) curves for multiple apex angles α. BK7 Sellmeier dispersion provides n(λ) at a chosen frequency.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          With θ<sub>i</sub> measured to the entry‑face normal and apex α, the emergence angle relative to the exit‑face normal satisfies
+          sin θ<sub>t</sub> = √(n² − sin² θ<sub>i</sub>) sin α − sin θ<sub>i</sub> cos α. The white‑light deflection is δ = θ<sub>i</sub> + θ<sub>t</sub> − α. For a given n the minimum incident angle for transmission (no total internal reflection at the exit) is θ<sub>i,min</sub> = sin⁻¹[n sin(α − sin⁻¹(1/n))]. The code marks this as a red dashed line.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task12b.png" alt="Prism θ_t and δ graphs" />
+          <figcaption>Top: θ<sub>t</sub>(θ<sub>i</sub>) and δ(θ<sub>i</sub>) for a fixed α and frequency. Bottom: δ(θ<sub>i</sub>) families for α = 10°…80°.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 12b.py" download>Download Task 12b.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task12a.html">← Prev: Task 12a</a>
+        <a href="TaskPage.html">Back to Tasks →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

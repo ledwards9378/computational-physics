@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 11b | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+  <h1>Task 11b</h1>
+  <p class="subtitle">Rainbow turning angles ε<sub>min</sub> vs frequency (dispersion-coloured)</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Compute the deflection angles at the stationary points (the bright “rainbow angles”) for the primary and secondary bows across the visible spectrum, and plot ε<sub>min</sub> vs frequency. Points are coloured by wavelength to show the spectral ordering.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          For each refractive index n(λ), the incident angle θ⋆ that extremizes ε(θ) satisfies closed forms:
+        </p>
+        <ul>
+          <li>Primary: θ⋆ = sin⁻¹(√((4 − n²)/3)), ε<sub>min</sub> = 4r − 2θ with r = sin⁻¹(sin θ⋆/n)</li>
+          <li>Secondary: θ⋆ = sin⁻¹(√((9 − n²)/8)), ε<sub>min</sub> = π − 6r + 2θ</li>
+        </ul>
+        <p>
+          The script sweeps frequency f (THz), evaluates n(f) via the empirical model (n² − 1)⁻² = 1.731 − 0.261 (f/10¹⁵ Hz)², then computes θ⋆ and ε<sub>min</sub> for both orders. The result shows primary angles ≈ 41–43° and secondary ≈ 50–53°, with slight dispersion.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task11b.png" alt="ε_min vs frequency plot" />
+          <figcaption>Primary and secondary ε<sub>min</sub> plotted against frequency; points are coloured by wavelength.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 11b.py" download>Download Task 11b.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task11a.html">← Prev: Task 11a</a>
+        <a href="Task11c.html">Next: Task 11c →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

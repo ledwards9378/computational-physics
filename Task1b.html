@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 1b | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+        <h1>Task 1b</h1>
+        <p class="subtitle">Model the refractive index of liquid water across the visible band using an empirical n–f relation (405–790 THz)</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Compute the refractive index of water as a function of optical frequency f over 405–790 THz (equivalently wavelength λ ≈ 740–380 nm) using the given empirical relation, and produce a plot of n against f (or λ). Optionally colour the curve by the visible spectrum bands.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          Refractive index n determines how much light slows down in a medium: v = c / n. In transparent materials like water, n varies with frequency (dispersion). For this task we use an empirical fit that is accurate in the visible range and convenient to compute from frequency.
+        </p>
+        <p>
+          Frequency–wavelength conversion in vacuum follows f = c / λ, where c ≈ 2.99792458 × 10⁸ m·s⁻¹. Useful conversions:
+          λ[m] = c / f[Hz]; λ[nm] = 299792.458 / f[THz]. The visible band 405–790 THz corresponds to λ ≈ 740–380 nm.
+        </p>
+        <p>
+          Empirical model for water (visible band):
+          (n² − 1)^(−2) = 1.731 − 0.261 · (f / 10¹⁵ Hz)².
+          If you work with f in THz, use (f/10¹⁵ Hz) = f[THz]/1000. To recover n, compute x = 1.731 − 0.261 · (f/1000)², then use
+          n = sqrt(1 + x^(−1/2)). Numerically guard against tiny negative x at the extremes by clamping x to a small positive value before taking powers.
+        </p>
+        <p>
+          Expected behaviour across the visible: n increases slightly with frequency (towards violet). Typical values are near 1.331 at the red end (≈ 405 THz, λ ≈ 740 nm) and up to ≈ 1.339 near the violet end (≈ 790 THz, λ ≈ 380 nm). A good check is around the sodium D line (589 nm, ≈ 508 THz) where n ≈ 1.333 for liquid water at room temperature.
+        </p>
+        <p>
+          Optional visualisation: colour the plotted points/segments by approximate visible colour bands in THz, for example
+          405–480 (red), 480–510 (orange), 510–530 (yellow), 530–600 (green), 600–620 (cyan), 620–680 (blue), 680–790 (violet). Interpolating between band colours produces a smoother gradient.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task1b.png" alt="Plot of water refractive index n versus frequency f across 405–790 THz" />
+          <figcaption>Example output: refractive index of water n versus frequency f across 405–790 THz, optionally colour-coded by visible band.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 1b.py" download>Download Task 1b.py</a></li>
+        </ul>
+      </section>
+          <nav class="pager" aria-label="Task navigation">
+            <a href="Task1a.html">← Prev: Task 1a</a>
+            <a href="Task2.html">Next: Task 2 →</a>
+          </nav>
+    </div>
+  </main>
+</body>
+</html>

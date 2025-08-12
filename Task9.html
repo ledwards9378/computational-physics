@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 9 | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+  <h1>Task 9</h1>
+  <p class="subtitle">Convex spherical mirror — virtual image formation</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Interactively explore how a convex spherical mirror forms a smaller, upright virtual image behind the mirror. Move the object with the arrow keys and watch the ray diagram and the theoretical (paraxial) prediction update.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          For a spherical mirror of radius R, the focal length is f = −R/2 for a convex mirror (negative because the image is virtual and appears behind the mirror). Using the mirror equation
+          1/u + 1/v = 1/f with u the object distance from the vertex and v the image distance (negative for a virtual image), we get a magnification m = −v/u which is positive and less than 1, so the virtual image is upright and smaller.
+        </p>
+        <ul>
+          <li>Ray 1: from the object horizontally to the mirror, reflecting as if it came from the focal point.</li>
+          <li>Ray 2: towards the center; the reflected ray obeys the law of reflection about the surface normal.</li>
+          <li>Their backward extensions meet at the virtual image point (behind the mirror).</li>
+        </ul>
+
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task9.png" alt="Convex mirror virtual image demo" />
+          <figcaption>Move the object with the arrow keys; the virtual image (green) is predicted by the paraxial model.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 9.py" download>Download Task 9.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+  <a href="Task8.html">← Prev: Task 8</a>
+        <a href="Task10.html">Next: Task 10 →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPhO - Computational Physics Challenge 2025</title>
+    <link rel="stylesheet" href="MainStyle.css">
+    <!-- All CSS moved to MainStyle.css for maintainability -->
+</head>
+<body>
+
+
+<!-- Site Title Bar -->
+<header class="site-title-bar" aria-label="Site title">
+    <h1 class="site-title">
+        <span class="title-main">Computational Physics Challenge 2025</span>
+        <span class="title-sep">•</span>
+        <span class="title-sub">Luke Edwards — Solo entry</span>
+    </h1>
+    <p class="site-tagline">Interactive optics, modelling, and visualisations</p>
+  </header>
+
+<!-- Main Prism Animation Section -->
+<div id="animation-container">
+    <svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-label="Optics prism animation" role="img">
+        <defs>
+            <linearGradient id="prismSpread" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#fff" stop-opacity="0.7" />
+                <stop offset="70%" stop-color="#fff" stop-opacity="0.3" />
+                <stop offset="100%" stop-color="#fff" stop-opacity="0" />
+            </linearGradient>
+            <filter id="rayGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="6" result="blur"/>
+                <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+            <filter id="rainbowGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="12" result="blur"/>
+                <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+            <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ff2a2a" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#ff2a2a" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient id="orangeGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ff9900" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#ff9900" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient id="yellowGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ffe600" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#ffe600" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#3ec6ff" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#3ec6ff" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#3399ff" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#3399ff" stop-opacity="0" />
+            </linearGradient>
+        </defs>
+        <!-- Equilateral triangle pointing down -->
+        <polygon points="400,200 600,200 500,373.2"
+                 fill="rgba(255,255,255,0.08)"
+                 stroke="rgba(62,198,255,0.4)" stroke-width="6" filter="drop-shadow(0 0 24px #3ec6ff88)" />
+        <!-- Main ray from top-left to left edge midpoint (450,286.6) -->
+        <line id="main-ray" class="ray" x1="450" y1="286.6" x2="-400" y2="50" filter="url(#rayGlow)" />
+        <!-- Spreading light inside the prism: white triangle with fading right edge -->
+        <polygon id="spread-triangle" points="450,286.6 450,286.6 450,286.6"
+            fill="url(#prismSpread)" filter="blur(1.5px)" opacity="0" />        <!-- Rainbow divided into 4 equal sections - slightly wider for navigation -->
+        <g id="rainbow-group">
+            <polygon class="rainbow-triangle blue" filter="url(#rainbowGlow)" fill="url(#blueGrad)" opacity="0" points="535,312.6 539.25,308.275 1200,400 1200,480" />
+            <polygon class="rainbow-triangle green" filter="url(#rainbowGlow)" fill="url(#greenGrad)" opacity="0" points="539.25,308.275 541.25,303.95 1200,320 1200,400" />
+            <polygon class="rainbow-triangle yellow" filter="url(#rainbowGlow)" fill="url(#yellowGrad)" opacity="0" points="541.25,303.95 543.25,299.625 1200,240 1200,320" />
+            <polygon class="rainbow-triangle red" filter="url(#rainbowGlow)" fill="url(#redGrad)" opacity="0" points="543.25,299.625 545,295.3 1200,160 1200,240" /></g>
+    </svg>
+</div>
+
+<div class="nav-bar-container">
+    <!-- Navigation Section with sliding animation including home, tasks, research, and about -->
+    <nav id="nav-bar">
+        <ul class="nav-bar">
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="TaskPage.html">Tasks</a></li>
+            <li><a href="ResearchPage.html">Research</a></li>
+            <li><a href="AboutPage.html">About</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+
+
+
+
+<script>
+window.onload = function() {
+    // Animate main ray sliding in
+    const mainRay = document.getElementById('main-ray');
+    mainRay.style.opacity = 1;
+
+    let startX = -400, startY = 50;
+    let endX = 450, endY = 286.6;
+
+    mainRay.setAttribute('x1', startX);
+    mainRay.setAttribute('y1', startY);
+    mainRay.setAttribute('x2', startX);
+    mainRay.setAttribute('y2', startY);
+
+
+    const steps = 60;
+    let i = 0;
+
+    const spreadTriangle = document.getElementById('spread-triangle');
+    const startPoints = [450,286.6, 450,286.6, 450,286.6];
+    const endPoints = [450,286.6, 535,312.6, 545,295.3];
+    spreadTriangle.setAttribute('points', startPoints.join(' '));
+    spreadTriangle.setAttribute('opacity', 0);
+    // Animate main ray first
+    let interval = setInterval(() => {
+        i++;
+        let t = i / steps;
+        let x1 = startX + (endX - startX) * t;
+        let y1 = startY + (endY - startY) * t;
+        mainRay.setAttribute('x1', x1);
+        mainRay.setAttribute('y1', y1);
+        if (i >= steps) {
+            mainRay.setAttribute('x1', endX);
+            mainRay.setAttribute('y1', endY);
+            clearInterval(interval);
+            // Now animate the spread triangle at a faster speed
+            let triangleI = 0;
+            let triangleSteps = 30; // half the steps for faster animation
+            let triangleInterval = setInterval(() => {
+                triangleI++;
+                let tt = triangleI / triangleSteps;
+                let points = [
+                    450,286.6,
+                    450 + (535-450)*tt, 286.6 + (312.6-286.6)*tt,
+                    450 + (545-450)*tt, 286.6 + (295.3-286.6)*tt
+                ];
+                spreadTriangle.setAttribute('points', points.join(' '));
+                spreadTriangle.setAttribute('opacity', tt*0.8);
+                if (triangleI >= triangleSteps) {
+                    spreadTriangle.setAttribute('points', endPoints.join(' '));
+                    spreadTriangle.setAttribute('opacity', 0.8);
+                    clearInterval(triangleInterval);
+                }
+            }, 15); // faster: ~0.45s total
+        }
+    }, 25); // ~1.5s total    // Animate rainbow triangles - slide from left to right like the other rays
+    const rainbowTriangles = document.querySelectorAll('.rainbow-triangle');
+    const rainbowStartPoints = [
+        [535,312.6, 539.25,308.275, 539.25,308.275, 535,312.6], // blue
+        [539.25,308.275, 541.25,303.95, 541.25,303.95, 539.25,308.275], // green
+        [541.25,303.95, 543.25,299.625, 543.25,299.625, 541.25,303.95], // yellow
+        [543.25,299.625, 545,295.3, 545,295.3, 543.25,299.625] // red
+    ];
+    const rainbowEndPoints = [
+        [535,312.6, 539.25,308.275, 1200,412.5, 1200,500], // blue
+        [539.25,308.275, 541.25,303.95, 1200,325, 1200,412.5], // green
+        [541.25,303.95, 543.25,299.625, 1200,237.5, 1200,325], // yellow
+        [543.25,299.625, 545,295.3, 1200,150, 1200,237.5] // red
+    ];
+    
+    setTimeout(() => {
+        rainbowTriangles.forEach((triangle, index) => {
+            triangle.style.opacity = 0.85;
+            triangle.setAttribute('points', rainbowStartPoints[index].join(' '));
+            let steps = 30;
+            let i = 0;
+            let interval = setInterval(() => {
+                i++;
+                let t = i / steps;
+                let points = [
+                    rainbowStartPoints[index][0], rainbowStartPoints[index][1],
+                    rainbowStartPoints[index][2] + (rainbowEndPoints[index][2] - rainbowStartPoints[index][2]) * t,
+                    rainbowStartPoints[index][3] + (rainbowEndPoints[index][3] - rainbowStartPoints[index][3]) * t,
+                    rainbowStartPoints[index][4] + (rainbowEndPoints[index][4] - rainbowStartPoints[index][4]) * t,
+                    rainbowStartPoints[index][5] + (rainbowEndPoints[index][5] - rainbowStartPoints[index][5]) * t,
+                    rainbowStartPoints[index][6] + (rainbowEndPoints[index][6] - rainbowStartPoints[index][6]) * t,
+                    rainbowStartPoints[index][7] + (rainbowEndPoints[index][7] - rainbowStartPoints[index][7]) * t
+                ];
+                triangle.setAttribute('points', points.join(' '));
+                if (i >= steps) {
+                    triangle.setAttribute('points', rainbowEndPoints[index].join(' '));
+                    clearInterval(interval);
+                }
+            }, 15);
+        });    }, 2000);
+};
+</script>
+</body>
+</html>

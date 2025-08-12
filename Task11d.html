@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 11d | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+  <h1>Task 11d</h1>
+  <p class="subtitle">Primary and secondary rainbow arcs at sea level for different Sun elevations</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Draw the rainbow arcs as seen from sea level for several solar elevation angles α (5°, 20°, 30°, 40°), with an interactive panel to vary α. The arcs are coloured by wavelength using the same dispersion model as earlier tasks.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          Directions of strongest scattering lie on a cone around the antisolar direction with half‑angle ε<sub>min</sub>(λ). From the observer’s eye, points on this cone above the horizon (z > 0) form visible arcs. We project the cone to a screen using a simple perspective (onto the plane x = 1) so the horizon is a straight line.
+        </p>
+        <ul>
+          <li>For each λ, compute ε<sub>min</sub> for primary and secondary using θ⋆(n(λ)).</li>
+          <li>Form the cone relative to the antisolar vector a at altitude −α; trace many azimuths.</li>
+          <li>Keep only points with positive altitude; project to the screen to plot the arcs.</li>
+        </ul>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task11d.png" alt="Rainbow arcs vs solar elevation" />
+          <figcaption>Four panels show fixed α values; the lower‑right panel is interactive with a slider for α.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 11d.py" download>Download Task 11d.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task11c.html">← Prev: Task 11c</a>
+        <a href="Task12a.html">Next: Task 12a →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

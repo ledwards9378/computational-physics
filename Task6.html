@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 6 | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+        <h1>Task 6</h1>
+        <p class="subtitle">Thin-lens imaging: interactive real-image rendering with inverse mapping and a focal-length slider</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Load an object image on the right of a converging lens at x = 0, adjust the focal length, and move the object. The program computes where a real image forms on the left (when u &gt; f) and renders it using a physically consistent inverse mapping. It also annotates the theoretical image distance and magnification.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          The thin-lens equation relates object distance u and image distance v (measured from the lens): 1/u + 1/v = 1/f. With the sign convention used here, the lens is at x = 0, the object sits at x = u &gt; 0, and a real image appears to the left at v &lt; 0 when u &gt; f. The transverse magnification is m = −v/u: real images are inverted (m &lt; 0) and scaled by |m|.
+        </p>
+        <p>
+          For rendering, we use an inverse mapping from screen coordinates (X, Y) on the image side back to source coordinates (x, y) on the object, derived from similar triangles and the magnification relation. This guarantees a single sample per output pixel and avoids gaps compared with naive forward mapping. When u ≤ f the rays do not converge to a real image; the program suppresses the left-side render and indicates that a virtual image would lie on the right.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task6.png" alt="Interactive thin-lens imaging: object at x &gt; 0, real image at x &lt; 0 with predicted v and magnification m annotated" />
+          <figcaption>Example: object (right) and computed real image (left). Annotations show u, f, predicted v, and magnification m.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 6.py" download>Download Task 6.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task5.html">← Prev: Task 5</a>
+        <a href="Task7.html">Next: Task 7 →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

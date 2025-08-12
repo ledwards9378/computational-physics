@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 11a | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+  <h1>Task 11a</h1>
+  <p class="subtitle">Rainbow elevation ε vs incidence θ — primary and secondary bows</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Plot the deflection (elevation) angle ε of light emerging from a spherical water drop as a function of the incident angle θ. The curves are coloured by wavelength using a dispersion model for water, so the rainbow structure is visible directly on the plot.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          Let r be the refraction angle inside the drop, given by Snell’s law r = sin⁻¹(sin θ / n). With n the refractive index of water (slightly wavelength‑dependent), the deflection ε for the two main rainbow orders is:
+        </p>
+        <ul>
+          <li>Primary (one internal reflection): ε(θ) = 4r − 2θ = 4 sin⁻¹(sin θ / n) − 2θ</li>
+          <li>Secondary (two internal reflections): ε(θ) = π − 6r + 2θ = π − 6 sin⁻¹(sin θ / n) + 2θ</li>
+        </ul>
+        <p>
+          The brightest part of each bow occurs near the stationary point dε/dθ = 0. Solving gives closed‑form incident angles:
+        </p>
+        <ul>
+          <li>Primary: θ⋆ = sin⁻¹(√((4 − n²)/3))</li>
+          <li>Secondary: θ⋆ = sin⁻¹(√((9 − n²)/8))</li>
+        </ul>
+        <p>
+          For n ≈ 1.33 (green light in water), the primary bow emerges near ε ≈ 41–43° and the secondary near ε ≈ 50–53°. The script samples visible wavelengths, maps each to n(λ), and draws the families ε(θ) in their corresponding colours with the turning‑point levels indicated.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task11a.png" alt="Rainbow ε(θ) curves coloured by wavelength" />
+          <figcaption>The primary (upper set) and secondary (lower set) ε–θ curves, coloured by wavelength using a water dispersion model; horizontal coloured lines show the stationary ε values.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 11a.py" download>Download Task 11a.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task10.html">← Prev: Task 10</a>
+        <a href="Task11b.html">Next: Task 11b →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

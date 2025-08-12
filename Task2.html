@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 2 | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+        <h1>Task 2</h1>
+        <p class="subtitle">Verify the thin lens equation and determine the focal length from a 1/v vs 1/u linear fit</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Measure object distance u and image distance v for a converging (biconvex) lens, plot 1/v against 1/u, fit a straight line, and extract the focal length f from the intercept. Report f in centimetres with a brief comment on the model’s validity.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          A thin, symmetric converging lens bends paraxial rays so that rays parallel to the optical axis meet at the focal point a distance f from the lens. For real images and objects, the thin lens equation relates object distance u and image distance v (measured from the lens along the optic axis):
+          1/u + 1/v = 1/f.
+        </p>
+        <p>
+          Sign convention used here: u and v are taken as positive for a real object and a real (inverted) image on opposite sides of the lens. For a converging lens, f > 0. With all distances in centimetres, 1/u and 1/v have units of 1/cm and 1/f is also in 1/cm.
+        </p>
+        <p>
+          Linearisation for analysis: rearrange to a straight-line form in the variables x = 1/u and y = 1/v,
+          y = −x + 1/f.
+          The theoretical slope is −1 and the intercept on the y-axis is 1/f. Therefore, fitting a line y = mx + c to your 1/v vs 1/u data gives f = 1/c. Deviations of m from −1 and scatter about the line indicate experimental/systematic errors (alignment, non-paraxial rays, finite lens thickness, measurement precision).
+        </p>
+        <p>
+          Example (from the provided dataset): a best-fit line yields approximately m ≈ −1.04 and c ≈ 0.0669 (1/cm), giving f ≈ 1/c ≈ 15.0 cm and a strong linear correlation (R² ≈ 0.998). These figures are typical for a school lab biconvex lens and support the thin lens model within experimental uncertainty.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task2.png" alt="Example plot of 1/v versus 1/u with best-fit line for a thin converging lens" />
+          <figcaption>Example: 1/v vs 1/u with best-fit line; intercept gives 1/f and slope should be close to −1.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 2.py" download>Download Task 2.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task1b.html">← Prev: Task 1b</a>
+        <a href="Task3.html">Next: Task 3 →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

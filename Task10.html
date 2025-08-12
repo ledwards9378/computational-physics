@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 10 | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+  <h1>Task 10</h1>
+  <p class="subtitle">Cylindrical mirror anamorphosis — mapping to a circular fan</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Generate a printable “fan” that reconstructs an image in a polished cylindrical mirror. The program fits your picture inside a unit circle and maps those pixels to an arc of radius R<sub>f</sub> below the circle. Print the fan and place a shiny cylinder at its centre to see the image appear upright in the reflection.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          A vertical cylinder behaves like a 2D circular mirror in cross‑section. Rays reflect with equal angles about the local normal. We compute, for each point (X, Y) inside the circle, where its reflected ray intersects a plane (the printed sheet). That point becomes the location for the pixel in the “fan.” Restricting the azimuth to a sector of angle Δφ creates a compact wedge that’s easy to print.
+        </p>
+        <ul>
+          <li>Mirror radius R (blue circle) with the picture fitted inside it.</li>
+          <li>Fan parameters: sector angle (ARC_DEG), maximum radius factor (RADIUS_FACTOR), and orientation (below/above).</li>
+          <li>Mapping: The code uses an inverse solve with bilinear sampling for smooth output, or a forward “splat” mode for debugging.</li>
+        </ul>
+        <p>
+          To view the anamorph: print the fan at 100%, cut around the wedge if you like, and place a polished cylinder (or chrome tube) centred on the fan’s origin. The reflection reconstructs the original image.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task10.png" alt="Cylindrical mirror anamorph example" />
+          <figcaption>The picture inside the circle is mapped to a printable arc (the fan) that reconstructs in a cylinder.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 10.py" download>Download Task 10.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task9.html">← Prev: Task 9</a>
+        <a href="Task11a.html">Next: Task 11a →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

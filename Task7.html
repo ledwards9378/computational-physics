@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 7 | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+        <h1>Task 7</h1>
+        <p class="subtitle">Thin-lens virtual imaging (object inside focal length) with ray tracing and inverse mapping</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Place the object between the lens and its focal point (u &lt; f). The lens forms a virtual, upright, magnified image on the object’s side. This app renders that virtual image by mapping pixels and shows ray tracing so you can see how the back‑projected principal rays meet at the virtual image location.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          Thin‑lens relation: 1/u + 1/v = 1/f. With the lens at x = 0 and the object at u &gt; 0 on the right, if u &lt; f there is no real intersection of refracted rays on the left. Instead, extending the refracted rays back to the right gives a virtual image at
+          v = + fu/(f − u) &gt; 0. The transverse magnification is m = v/u &gt; 1 (upright, enlarged).
+        </p>
+        <p>
+          Ray tracing connects directly to this result. Two principal rays from the object top are drawn: (1) the central ray through the lens centre, which is undeviated; (2) the ray parallel to the axis that refracts as if it came from the focal point on the far side. These emerging rays diverge, but their straight‑line extensions back into the object half‑space intersect at the virtual image point (x = v, y = m·y₀). The code both renders the image via inverse mapping and marks that theoretical intersection to show consistency.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task7.png" alt="Virtual image on the object side (u &lt; f) with principal rays back‑projected to meet at x = v" />
+          <figcaption>Example: object between lens and focal point. Back‑projected principal rays meet at the virtual image; overlay shows u, f, v, m.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 7.py" download>Download Task 7.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task6.html">← Prev: Task 6</a>
+        <a href="Task8.html">Next: Task 8 →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

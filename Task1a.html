@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 1a | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+        <h1>Task 1a</h1>
+  <p class="subtitle">Model the refractive index of crown glass (BK7) as a function of wavelength using the Sellmeier equation</p>
+      </header>
+
+  <section class="card">
+          <h2>Overview</h2>
+          <p class="lead">Build n(λ) for BK7 crown glass across the visible spectrum (≈ 400–800 nm) using the Sellmeier dispersion model, and produce a plot of refractive index versus wavelength.</p>
+
+          <h2>Key Theory</h2>
+          <p>
+            The refractive index n describes how light propagates in a medium: the wave speed becomes v = c / n, so higher n means light travels more slowly and bends more on entering the material. In real materials, n depends on wavelength λ (dispersion) because the bound electrons respond differently to different optical frequencies.
+          </p>
+          <p>
+            The Sellmeier equation is a widely used empirical model for transparent dielectrics away from strong absorption bands. It captures dispersion as a sum of resonant terms associated with electronic excitations. For wavelength λ measured in micrometres (μm), it takes the form:
+            n(λ) = sqrt( 1 + Σ_k a_k λ² / (λ² − b_k) ). The constants a_k (dimensionless) scale the strength of each resonance term, and b_k (in μm²) set the squared resonance wavelengths; the poles lie at λ = √b_k (outside the visible for BK7), giving smooth, normal dispersion in the visible range.
+          </p>
+          <p>
+            For BK7 crown glass, use the standard 3-term Sellmeier coefficients:
+            a = [1.03961212, 0.231792344, 1.01146945],
+            b = [0.00600069867, 0.0200179144, 103.560653]. Ensure you convert input wavelengths from nanometres to micrometres before evaluating (λ_μm = λ_nm / 1000).
+          </p>
+          <p>
+            Expected behaviour (visible band, ≈ 0.4–0.8 μm): n decreases slightly as λ increases (normal dispersion), from about 1.53 near 400 nm to about 1.51 near 800 nm. A useful validation point is the sodium D line (589 nm), where n ≈ 1.5168 for BK7.
+          </p>
+
+          <figure class="screenshot">
+            <img src="../Tasks/Screenshots/Task1a.png" alt="Plot of BK7 refractive index n versus wavelength λ for Task 1a" />
+            <figcaption>Example output: n(λ) for BK7, showing a gentle decrease across 400–800 nm.</figcaption>
+          </figure>
+
+          <h2>Downloads</h2>
+          <ul class="downloads-list">
+            <li><a href="../Tasks/Task 1a.py" download>Task 1a Python file</a></li>
+            <!-- Add more files as needed -->
+          </ul>
+  </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="TaskPage.html">← Back to Tasks</a>
+        <a href="Task1b.html">Next: Task 1b →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

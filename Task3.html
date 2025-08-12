@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 3 | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+        <h1>Task 3</h1>
+        <p class="subtitle">Fermat’s principle: least-time path for reflection from a plane surface</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Calculate the travel time for light to go from point A to point B by reflecting off a plane at y = 0 via a point S at horizontal position x, plot t(x), and identify the minimum. The x at the minimum corresponds to the physical path selected by Fermat’s principle.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          Fermat’s principle states that the path taken by light between two points makes the optical travel time stationary (usually a minimum). In a uniform medium of refractive index n, the optical path length is OPL = n·s (n times the geometric distance s), so the time is t = OPL / c = (n/c)·s.
+        </p>
+        <p>
+          For reflection at a plane y = 0, consider A = (0, y) and B = (L, y). Constraining the ray to touch the plane at S = (x, 0), the total time as a function of x is
+          t(x) = (n/c) [ √(x² + y²) + √((L − x)² + y²) ]. Minimising t(x) gives
+          dt/dx = 0 ⇒ x/√(x² + y²) = (L − x)/√((L − x)² + y²).
+          Writing sinθ₁ = x/√(x² + y²) and sinθ₂ = (L − x)/√((L − x)² + y²) shows sinθ₁ = sinθ₂, hence θ₁ = θ₂: the law of reflection (angle of incidence equals angle of reflection).
+        </p>
+        <p>
+          In the symmetric case used here (same height y for A and B), the minimum occurs at x = L/2. The t(x) curve is smooth and convex, with a single minimum; marking this on the plot provides a clear numerical confirmation of Fermat’s principle.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task3.png" alt="Travel time t versus reflection point x for a plane mirror, showing the minimum (least-time path)" />
+          <figcaption>Example: travel time t(x) for reflection from a plane surface; the minimum marks the physical path.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 3.py" download>Download Task 3.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task2.html">← Prev: Task 2</a>
+        <a href="Task4.html">Next: Task 4 →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* Reusable styles for individual task pages (aligned with homepage theme) */
+
+:root {
+  --bg-dark: #181c2b;
+  --bg-dark-2: #232a3a;
+  --panel-bg-1: #f8faff;
+  --panel-bg-2: #eaf6ff;
+  --accent: #3ec6ff;
+  --accent-2: #3399ff;
+  --text-dark: #1f2433;
+}
+
+/* Background, fonts, and nav styles are inherited from MainStyle.css */
+
+/* Remove the homepage nav fill shadow on task pages to avoid a horizontal band */
+.nav-bar-container {
+  box-shadow: none;
+}
+
+.main {  
+  padding: 24px 16px 56px;
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.page-header {
+  margin: 24px auto 16px;
+  padding: 20px 24px;
+  color: #eaf6ff;
+  background: linear-gradient(180deg, rgba(35,42,58,0.9), rgba(24,28,43,0.9));
+  border-left: 8px solid var(--accent);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px #3ec6ff30;
+}
+
+.page-header h1 {
+  margin: 0 0 8px 0;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+}
+
+.page-header .subtitle {
+  margin: 4px 0 0 0;
+  color: #cfefff;
+  opacity: 0.9;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+}
+
+/* Single-column layout: content flows naturally below header */
+
+
+.card {
+  background: linear-gradient(135deg, var(--panel-bg-1) 60%, var(--panel-bg-2) 100%);
+  border: 2px solid var(--accent);
+  border-radius: 18px;
+  box-shadow: 0 8px 40px #3ec6ff30, 0 0 0 4px #3399ff20;
+  padding: 18px 20px;
+  color: var(--text-dark);
+}
+
+.card h2 {
+  margin: 0 0 12px 0;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+  font-size: 1.2rem;
+}
+
+.card h2:not(:first-of-type) { margin-top: 18px; }
+.card p, .card li { line-height: 1.6; }
+.card .lead { font-size: 1.05rem; margin: 8px 0 14px; }
+.screenshot { margin: 16px 0 18px; }
+.screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1.5px solid #eaf6ff;
+  box-shadow: 0 4px 24px #3ec6ff20;
+}
+.screenshot figcaption {
+  text-align: center;
+  color: #4b5565;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+/* Downloads list */
+.downloads-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 10px;
+  margin-top: 8px;
+}
+.downloads-list a {
+  text-decoration: none;
+  color: var(--text-dark);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1.5px solid #eaf6ff;
+  background: linear-gradient(90deg, #eaf6ff 0%, #f8faff 100%);
+  box-shadow: 0 2px 8px #3ec6ff10;
+  transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+.downloads-list a:hover, .downloads-list a:focus-visible {
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  border-color: var(--accent-2);
+  box-shadow: 0 4px 16px #3ec6ff40;
+  transform: translateY(-2px);
+}
+
+/* Prev/Next pager */
+.pager {
+  margin: 18px 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.pager a {
+  flex: 1 1 0;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-dark);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1.5px solid #eaf6ff;
+  background: linear-gradient(90deg, #eaf6ff 0%, #f8faff 100%);
+  box-shadow: 0 2px 8px #3ec6ff10;
+  transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+.pager a:hover, .pager a:focus-visible {
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  border-color: var(--accent-2);
+  box-shadow: 0 4px 16px #3ec6ff40;
+  transform: translateY(-2px);
+}
+@media (max-width: 640px) {
+  .pager { flex-direction: column; }
+}
+
+/* Removed CTA button and responsive multi-column styles (not used) */

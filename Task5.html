@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 5 | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+        <h1>Task 5</h1>
+        <p class="subtitle">Plane mirror imaging: reflect pixel coordinates to plot a virtual image</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Import an image (object) positioned to the right of a vertical mirror at x = 0, compute its virtual image by reflecting pixel coordinates across the mirror, and display both object and virtual image. The app also draws a physically correct reflection point and viewing ray to illustrate the law of reflection.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          A plane mirror produces a virtual image the same distance behind the mirror as the object is in front. For a vertical mirror at x = 0, each object point (x, y) maps to the virtual image point (−x, y); the image is laterally inverted but upright and the same size. This pixel-wise reflection is what the program uses to render the virtual image.
+        </p>
+        <p>
+          Rays obey the law of reflection: angle of incidence equals angle of reflection, measured from the normal to the surface. A convenient way to find the correct strike point S on the mirror for a viewer at B is the mirror‑image method: reflect the eye B to B′ across the mirror and draw the straight line A→B′; where it meets the mirror is S. This is equivalent to enforcing equal angles at S and is used here to draw the incident/reflected rays and confirm θ₁ = θ₂ numerically.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task5.png" alt="Object and its virtual image mirrored across x = 0 with reflection point and viewing ray" />
+          <figcaption>Example: object (right) and virtual image (left) across a vertical mirror; guides show the reflection point and equal angles.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 5.py" download>Download Task 5.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task4.html">← Prev: Task 4</a>
+        <a href="Task6.html">Next: Task 6 →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

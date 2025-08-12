@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 11c | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+  <h1>Task 11c</h1>
+  <p class="subtitle">Internal refraction angle φ at the rainbow vs frequency</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Plot the internal refraction angle φ = r(θ⋆, n) at the primary and secondary rainbow turning points as a function of frequency, together with the critical angle φ<sub>c</sub> = sin⁻¹(1/n). Points are coloured by wavelength.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          The stationary incidence angles are θ⋆(n) from Task 11b. The internal refraction angles at those points are simply r = sin⁻¹(sin θ⋆/n). Comparing r to the critical angle φ<sub>c</sub> = sin⁻¹(1/n) explains why internal reflections are lossy: r is smaller than φ<sub>c</sub> across the visible, so some light exits at each reflection.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task11c.png" alt="φ vs frequency plot with critical angle" />
+          <figcaption>Primary and secondary φ(f) overlaid with the critical angle φ<sub>c</sub>(f); colours indicate wavelength.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 11c.py" download>Download Task 11c.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task11b.html">← Prev: Task 11b</a>
+        <a href="Task11d.html">Next: Task 11d →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

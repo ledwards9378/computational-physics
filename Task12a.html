@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 12a | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+  <h1>Task 12a</h1>
+  <p class="subtitle">Dynamic prism — white light through a triangular prism</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Interactively trace a beam of white light through an isosceles glass prism. Use sliders to vary the apex angle α and the angle of incidence θ<sub>i</sub>; the program splits the beam by wavelength using BK7 Sellmeier dispersion and draws the incident ray, the internal path, and the dispersed outgoing bundle.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          For each wavelength (hence refractive index n(λ)) the ray refracts at each face according to Snell’s law. In an isosceles prism with apex angle α the interior refraction angles satisfy r<sub>1</sub> + r<sub>2</sub> = α, with r<sub>1</sub> = sin⁻¹(sin θ<sub>i</sub> / n) and the emergence angle obeys sin θ<sub>t</sub> = n sin r<sub>2</sub> (provided there’s no total internal reflection at the exit).
+        </p>
+        <p>
+          Eliminating r<sub>1</sub>, r<sub>2</sub> gives the standard transmission formula used in the graphs: 
+          sin θ<sub>t</sub> = √(n² − sin² θ<sub>i</sub>) sin α − sin θ<sub>i</sub> cos α.
+          The overall deflection of the white light is δ = θ<sub>i</sub> + θ<sub>t</sub> − α. Because n(λ) varies slightly with wavelength, different colours exit at slightly different angles → a spectrum.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task12a.png" alt="Interactive prism refraction of white light" />
+          <figcaption>Use the sliders (α, θ<sub>i</sub>) to move from weak to strong dispersion and observe the change in δ.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 12a.py" download>Download Task 12a.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task11d.html">← Prev: Task 11d</a>
+        <a href="Task12b.html">Next: Task 12b →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

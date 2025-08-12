@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 4 | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+        <h1>Task 4</h1>
+        <p class="subtitle">Snell’s law from Fermat: least-time path across a boundary between two media (speeds c₁ and c₂)</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">For points A above and B below a horizontal boundary, compute the travel time t(x) for a ray that crosses the interface at horizontal position x when wave speeds are c₁ (upper medium) and c₂ (lower medium). Plot t versus x, locate the minimum, and use it to verify Snell’s law.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          Fermat’s principle states that light (or any wavefront) follows a path that makes the travel time stationary. With constant speeds c₁ and c₂ in two uniform media, the time for a path A→S→B that touches the interface y = 0 at S = (x, 0) is
+          t(x) = d₁/c₁ + d₂/c₂, where d₁ = √(x² + y₁²) and d₂ = √((L − x)² + y₂²).
+          Minimizing t(x) with respect to x gives
+          sinθ/c₁ = sinφ/c₂, which is Snell’s law in speed form. For light, since n ∝ 1/c, this is equivalent to n₁ sinθ = n₂ sinφ.
+        </p>
+        <p>
+          Here θ is the angle of incidence in the upper medium and φ is the angle of refraction in the lower medium, both measured from the normal. If c₂ < c₁ (slower lower medium, higher refractive index), the ray bends towards the normal (φ < θ). The t(x) curve is convex with a single minimum at the physically realized crossing point.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/Screenshots/Task4.png" alt="Example t(x) curve across two media with the least-time crossing x marked; inset angles obey Snell’s law" />
+          <figcaption>Example: travel time t versus x across two media; the minimum satisfies sinθ/c₁ = sinφ/c₂ (Snell’s law).</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 4.py" download>Download Task 4.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task3.html">← Prev: Task 3</a>
+        <a href="Task5.html">Next: Task 5 →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

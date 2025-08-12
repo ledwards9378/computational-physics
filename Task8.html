@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 8 | BPhO Computational Physics 2025</title>
+  <link rel="stylesheet" href="MainStyle.css" />
+  <link rel="stylesheet" href="TaskDetail.css" />
+</head>
+<body>
+  <div class="nav-bar-container">
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="TaskPage.html">Tasks</a></li>
+        <li><a href="ResearchPage.html">Research</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <header class="page-header">
+        <h1>Task 8</h1>
+        <p class="subtitle">Concave spherical mirror: interactive real-image formation with pixel coordinate mapping</p>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="lead">Load an object and move it near a concave spherical mirror of radius R. The program warps the image using a coordinate transform that follows the mirror geometry and shows the real inverted image that can appear “floating” in front of the mirror. It overlays a paraxial prediction (mirror equation) and draws principal rays for intuition.</p>
+
+        <h2>Key Theory</h2>
+        <p>
+          For a spherical concave mirror of radius R (vertex at x = −R, center at (0,0)), the focal length is f = R/2. Using the standard paraxial mirror relation with distances measured from the vertex along the optic axis, 1/u + 1/v = 1/f, where u is the object distance (to the right of the vertex) and v is the image distance. When u &gt; f, a real inverted image forms at x = −R + v; magnification is m = −v/u.
+        </p>
+        <p>
+          Beyond the small‑angle approximation, each pixel can be mapped with a geometry‑based transform that uses the surface normal and reflection law (equivalent to the equations shown in the brief). This produces a realistic warped image on the mirror. Ray tracing (a central ray via the mirror’s center and a ray parallel to the axis reflecting through the focus) is drawn to show how the real image position is consistent with both the transform and the paraxial prediction.
+        </p>
+
+        <figure class="screenshot">
+          <img src="../Tasks/sample_object.png" alt="Concave mirror: warped reflection on the surface, principal rays, and a real image marked in front of the mirror" />
+          <figcaption>Example: concave spherical mirror. The paraxial prediction (1/u + 1/v = 1/f) and principal rays agree with the real image location.</figcaption>
+        </figure>
+
+        <h2>Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="../Tasks/Task 8.py" download>Download Task 8.py</a></li>
+        </ul>
+      </section>
+      <nav class="pager" aria-label="Task navigation">
+        <a href="Task7.html">← Prev: Task 7</a>
+        <a href="Task9.html">Next: Task 9 →</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>
